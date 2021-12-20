@@ -3,8 +3,9 @@ package org.arm.resource.mngt.api;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import org.arm.resource.mngt.entity.Resource;
-import org.arm.resource.mngt.entity.Task;
+import org.arm.resource.mngt.entity.ResourceNew;
 import org.arm.resource.mngt.exception.ResourceNotFoundException;
 import org.arm.resource.mngt.service.ResourceService;
 import org.arm.resource.mngt.vo.ResourceVO;
@@ -73,4 +74,8 @@ public class ResourceController {
 		return resourceService.getById(id);
 	}
 
+	@GetMapping("rnew")
+	List<ResourceNew> getNewR() {
+		return resourceService.getAllNew();
+	}
 }

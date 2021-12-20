@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.arm.resource.mngt.entity.Resource;
+import org.arm.resource.mngt.entity.ResourceNew;
 import org.arm.resource.mngt.exception.IDNotFoundException;
 import org.arm.resource.mngt.exception.ResourceNotFoundException;
 import org.arm.resource.mngt.repository.ResourceRepository;
+import org.arm.resource.mngt.repository.ResourceRepositoryNew;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,13 @@ public class ResourceService implements IResourceService {
 
 	@Autowired
 	private ResourceRepository resourceRepository;
+	
+	@Autowired
+	private ResourceRepositoryNew resourceRepositorynew;
+	
+	public List<ResourceNew> getAllNew(){
+		return resourceRepositorynew.findAll();
+	}
 
 	@Override
 	public void save(Resource resource) {
