@@ -30,6 +30,10 @@ public class TaskController {
 		return taskService.getById(id);
 	}
 
+	@GetMapping("/tasks/project/{project-id}")
+	public List<Task> getTasksByProjectId(@PathVariable("project-id") int projectId) {
+		return taskService.getTasksByProjectId(projectId);
+	}
 	/**
 	 * gets all task,resource(if available)
 	 * and filtering unwanted columns i.e., using ResourceVO

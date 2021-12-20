@@ -16,4 +16,5 @@ public interface ITaskService {
 	
 	List<Task> getByDurationLessThan(float availableHours) throws TaskNotFoundException;
 
+	List<Task> getTasksByProjectId(int projectId);
 }

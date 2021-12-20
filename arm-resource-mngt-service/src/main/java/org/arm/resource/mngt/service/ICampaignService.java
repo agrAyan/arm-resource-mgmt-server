@@ -1,5 +1,6 @@
 package org.arm.resource.mngt.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.arm.resource.mngt.entity.Campaign;
@@ -12,7 +13,11 @@ public interface ICampaignService {
 
 	public void createCampaign(Campaign campaign);
 
-	public Campaign findById(int l) throws IDNotFoundException;
+	public Campaign getById(int l) throws IDNotFoundException;
 	
 	List<Campaign> getAllResourcesCampaignDetails() throws CampaignNotFoundException;
+	
+	public Campaign addCampaign(Campaign campaign);
+	
+	List<Campaign> getCamapignOfMonth(Timestamp startDate, Timestamp endDate);
 }

@@ -1,5 +1,6 @@
 package org.arm.resource.mngt.api;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -23,6 +24,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -66,7 +69,7 @@ public class CampaignController {
 	 */
 	@GetMapping("/campaign/{id}")
 	public ResponseEntity<Campaign> findById(@PathVariable("id") int id)throws IDNotFoundException{
-		Campaign campaignById=campaignService.findById(id);
+		Campaign campaignById=campaignService.getById(id);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("desc", "Get Campaign By ID");
 		return ResponseEntity.ok().headers(headers).body(campaignById);
@@ -109,4 +112,26 @@ public class CampaignController {
 		headers.add("desc", "Get All resources with campaign details");
 		return ResponseEntity.ok().headers(headers).body(campaignVOs);
 	}
+	
+	
+	@PostMapping("/campaigns")
+	public ResponseEntity<Campaign> addCampaign(@RequestBody Campaign campaign) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("desc", "Adding a Campaign");
+		return ResponseEntity.ok().headers(headers).body(campaignService.addCampaign(campaign));
+		
+	}
+	
+	
+	@GetMapping("/campaign/start-date/{start-date}/end-date/{end-date}")
+	public ResponseEntity<List<Campaign>> getCampaignDetailsByMonth(@PathVariable("start-date") String startDate, @PathVariable("end-date") String endDate)throws IDNotFoundException{
+		System.out.println(startDate);
+		Timestamp str= Timestamp.valueOf(startDate);
+		Timestamp endD= Timestamp.valueOf(endDate);
+		List<Campaign> campaignById=campaignService.getCamapignOfMonth(str, endD);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("desc", "Get Campaign By ID");
+		return ResponseEntity.ok().headers(headers).body(campaignById);
+	}
+	
 }

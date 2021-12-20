@@ -46,4 +46,8 @@ public class TaskService implements ITaskService {
 		}
 		return taskById.get();
 	}
+	
+	public List<Task> getTasksByProjectId(int projectId){
+		return taskRepository.findByProjectProjectId(projectId);
+	}
 }

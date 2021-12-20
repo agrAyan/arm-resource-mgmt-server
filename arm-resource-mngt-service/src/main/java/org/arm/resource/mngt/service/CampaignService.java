@@ -1,5 +1,6 @@
 package org.arm.resource.mngt.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +31,7 @@ public class CampaignService implements ICampaignService {
 	}
 
 	@Override
-	public Campaign findById(int id) throws IDNotFoundException{
+	public Campaign getById(int id) throws IDNotFoundException{
 		Optional<Campaign> campaignById=campaignRepository.findById(id);
 		if(campaignById==null) {
 			throw new IDNotFoundException("Id not found");
@@ -47,5 +48,13 @@ public class CampaignService implements ICampaignService {
 		}
 		return campaignList;
 	}
-
+	public Campaign addCampaign(Campaign campaign){
+		Campaign campaignAdded= campaignRepository.save(campaign);
+		if(campaignAdded==null)
+			throw new RuntimeException("campaign cannot be added");
+		return campaignAdded;
+	}
+	public List<Campaign> getCamapignOfMonth(Timestamp startDate, Timestamp endDate){
+		return campaignRepository.getCamapignOfMonth(startDate, endDate);
+	}
 }

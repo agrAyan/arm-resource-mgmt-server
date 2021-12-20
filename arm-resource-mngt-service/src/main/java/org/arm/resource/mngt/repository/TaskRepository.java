@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface TaskRepository extends JpaRepository<Task, Integer> {
 
 	List<Task> findByDurationLessThan(float availableHours);
-
+	List<Task> findByProjectProjectId(int projectId);
 }
