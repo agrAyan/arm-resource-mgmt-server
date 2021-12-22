@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.arm.resource.mngt.entity.Priority;
-import org.arm.resource.mngt.entity.Project;
-import org.arm.resource.mngt.entity.Status;
-import org.arm.resource.mngt.service.ProjectService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.DisplayName;
@@ -22,6 +18,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.acheron.resource.mngt.entity.Priority;
+import com.acheron.resource.mngt.entity.Project;
+import com.acheron.resource.mngt.entity.Status;
+import com.acheron.resource.mngt.repository.ProjectRepository;
+import com.acheron.resource.mngt.service.ProjectService;
 
 @ExtendWith(MockitoExtension.class)
 public class ProjectServiceImplTest {

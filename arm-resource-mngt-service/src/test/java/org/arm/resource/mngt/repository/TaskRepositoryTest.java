@@ -6,14 +6,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.sql.Timestamp;
 import java.util.List;
 
-import org.arm.resource.mngt.ArmRMSApplication;
-import org.arm.resource.mngt.entity.Priority;
-import org.arm.resource.mngt.entity.Status;
-import org.arm.resource.mngt.entity.Task;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.acheron.resource.mngt.ArmRMSApplication;
+import com.acheron.resource.mngt.entity.Priority;
+import com.acheron.resource.mngt.entity.Status;
+import com.acheron.resource.mngt.entity.Task;
+import com.acheron.resource.mngt.repository.TaskRepository;
 
 
 @SpringBootTest(classes = ArmRMSApplication.class)

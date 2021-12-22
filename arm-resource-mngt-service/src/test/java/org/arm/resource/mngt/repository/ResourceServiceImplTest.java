@@ -12,9 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import org.arm.resource.mngt.entity.Resource;
-import org.arm.resource.mngt.entity.Task;
-import org.arm.resource.mngt.service.ResourceService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.DisplayName;
@@ -23,6 +20,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.acheron.resource.mngt.entity.Resource;
+import com.acheron.resource.mngt.entity.Task;
+import com.acheron.resource.mngt.repository.ResourceRepository;
+import com.acheron.resource.mngt.service.ResourceService;
 
 @ExtendWith(MockitoExtension.class)
 public class ResourceServiceImplTest {

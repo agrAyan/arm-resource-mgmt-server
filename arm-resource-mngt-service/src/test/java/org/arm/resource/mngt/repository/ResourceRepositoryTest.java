@@ -6,12 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.sql.Timestamp;
 import java.util.List;
 
-import org.arm.resource.mngt.ArmRMSApplication;
-import org.arm.resource.mngt.entity.Resource;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.acheron.resource.mngt.ArmRMSApplication;
+import com.acheron.resource.mngt.entity.Resource;
+import com.acheron.resource.mngt.repository.ResourceRepository;
 
 @SpringBootTest(classes = ArmRMSApplication.class)
 public class ResourceRepositoryTest {

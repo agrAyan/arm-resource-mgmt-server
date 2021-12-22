@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.your.reference.service.entity.Expense;
+
+import com.acheron.your.reference.service.dataaccess.ExpenseRepository;
+import com.acheron.your.reference.service.entity.Expense;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

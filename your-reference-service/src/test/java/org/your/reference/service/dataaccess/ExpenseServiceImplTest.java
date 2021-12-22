@@ -15,8 +15,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.your.reference.service.entity.Expense;
-import org.your.reference.service.impl.ExpenseServiceImpl;
+
+import com.acheron.your.reference.service.dataaccess.ExpenseRepository;
+import com.acheron.your.reference.service.entity.Expense;
+import com.acheron.your.reference.service.impl.ExpenseServiceImpl;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
